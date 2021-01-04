@@ -127,7 +127,7 @@ class Sign(object):
     return (md5.hexdigest())
 
   def get_DS(self):
-    n = self.md5(Conf.app_version)
+    # n = self.md5(Conf.app_version)
     n = 'h8w582wxwgqvahcdkpvdhbh2w9casgfl'
     i = str(int(time.time()))
     r = ''.join(random.sample(string.ascii_lowercase + string.digits, 6))
@@ -182,10 +182,10 @@ def makeResult(result:str, data=None):
 
 
 if __name__ == "__main__":
-  #seconds = random.randint(10, 300)
+  seconds = random.randint(10, 300)
   ret = -1
-  #logging.info('Sleep for %s seconds ...' %(seconds))
-  #time.sleep(seconds)
+  logging.info('Sleep for %s seconds ...' %(seconds))
+  time.sleep(seconds)
 
   try:
     jdict = Sign(input().strip()).run()
